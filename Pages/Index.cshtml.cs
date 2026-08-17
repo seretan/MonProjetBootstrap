@@ -1,19 +1,12 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace MonProjetBootstrap.Pages;
 
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
-
-    public IndexModel(ILogger<IndexModel> logger)
-    {
-        _logger = logger;
-    }
+    public string MessageBienvenue { get; set; } = string.Empty;
 
     public void OnGet()
     {
-
+        // Logique métier ou appel de service en C#
+        MessageBienvenue = "Bonjour, propulsé par C# .NET !";
     }
 }
