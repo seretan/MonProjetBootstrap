@@ -9,6 +9,31 @@
         <!-- Donnée venant du Backend C# -->
         <h1 class="display-5 fw-bold text-primary">@Model.MessageBienvenue</h1>
         <p class="col-md-8 fs-4">Cette page utilise C# pour la logique et Bootstrap 5 pour le design.</p>
-        <button class="btn btn-dark btn-lg" type="button">Action Bootstrap</button>
+        <button class="btn btn-dark btn-lg" type="button" id="helloButton">Action Bootstrap</button>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="helloModal" tabindex="-1" aria-labelledby="helloModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="helloModalLabel">Message</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                @Model.ModalMessage
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('helloButton').addEventListener('click', function() {
+        var modal = new bootstrap.Modal(document.getElementById('helloModal'));
+        modal.show();
+    });
+</script>
